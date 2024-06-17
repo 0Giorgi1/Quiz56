@@ -1,0 +1,100 @@
+
+Quiz #4
+1. JSON Format for POST Requests
+
+The JSON format for POST requests to the remote service of the chatbot is as follows:
+
+json
+
+{
+    "userId": "string",
+    "message": "string",
+    "timestamp": "string",
+    "chatHistory": "string"
+}
+
+In this format:
+
+    userId is the identifier of the user.
+    message is the message that the user wants to send to the chatbot.
+    timestamp is the time when the message was sent.
+    chatHistory is the history of the chat conversation.
+
+2. Example of Chat Conversation and Corresponding JSON Representations
+
+Consider the following chat conversation:
+
+    User: Hello
+    Chatbot: Good day
+    User: What time is it?
+    Chatbot: 9:00 AM
+    User: I should go!
+    Chatbot: Wait for me!
+
+The corresponding JSON representations for each of the POST requests of the conversation are as follows:
+User: Hello
+
+json
+
+{
+    "userId": "user1",
+    "message": "Hello",
+    "timestamp": "2022-04-01T09:00:00Z",
+    "chatHistory": ""
+}
+
+Chatbot: Good day
+
+json
+
+{
+    "userId": "chatbot",
+    "message": "Good day",
+    "timestamp": "2022-04-01T09:01:00Z",
+    "chatHistory": "User: Hello\nChatbot: Good day"
+}
+
+User: What time is it?
+
+json
+
+{
+    "userId": "user1",
+    "message": "What time is it?",
+    "timestamp": "2022-04-01T09:02:00Z",
+    "chatHistory": "User: Hello\nChatbot: Good day"
+}
+
+Chatbot: 9:00 AM
+
+json
+
+{
+    "userId": "chatbot",
+    "message": "9:00 AM",
+    "timestamp": "2022-04-01T09:03:00Z",
+    "chatHistory": "User: Hello\nChatbot: Good day\nUser: What time is it?"
+}
+
+User: I should go!
+
+json
+
+{
+    "userId": "user1",
+    "message": "I should go!",
+    "timestamp": "2022-04-01T09:04:00Z",
+    "chatHistory": "User: Hello\nChatbot: Good day\nUser: What time is it?\nChatbot: 9:00 AM"
+}
+
+Chatbot: Wait for me!
+
+json
+
+{
+    "userId": "chatbot",
+    "message": "Wait for me!",
+    "timestamp": "2022-04-01T09:05:00Z",
+    "chatHistory": "User: Hello\nChatbot: Good day\nUser: What time is it?\nChatbot: 9:00 AM\nUser: I should go!"
+}
+
